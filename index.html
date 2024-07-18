@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chronometrum!</title>
+  <link rel="stylesheet" href="./chronometrum/reset_styles.css">
+  <link rel="stylesheet" href="./chronometrum/chronometrum_styles.css">
+</head>
+
+<body>
+  <div class="timer_before" id="timer_before">
+    <div class="left_column">
+      <div class="inputs_holder">
+        <div class="inp_container">
+          <input type="number" id="hours_input" value="00" tabindex="1" class="timer_input" autocomplete="off" data-maxvalue="99">
+          <span class="input_format">hours</span>
+        </div>
+        <span class="divider">:</span>
+        <div class="inp_container">
+          <input type="number" id="minutes_input" value="00" tabindex="2" class="timer_input" autocomplete="off" data-maxvalue="59">
+          <span class="input_format">minutes</span>
+        </div>
+        <span class="divider">:</span>
+        <div class="inp_container">
+          <input  type="number" id="seconds_input" value="00" tabindex="3" class="timer_input" autocomplete="off" data-maxvalue="59">
+          <span class="input_format">seconds</span>
+        </div>
+      </div>
+      <div class="buttons_container">
+        <button id="play" class="functional_btn">
+          <img src="./chronometrum/sources/icons/play_icon.svg">
+        </button>
+      </div>
+    </div>
+
+    <div class='right_column'>
+      <div class="saved_container">
+        <div class="saved" unselectable="on">
+          <div class="saved_items">
+            <h1 class="title">Saved Templates</h1>
+          </div>
+          <div class="new_item_container">
+            <button id="new" class="functional_btn">New +</button>
+            <div class="new_template">
+              <div class="new_input_holder">
+                <input type="number" value="00" tabindex="1" class="timer_input" autocomplete="off" data-maxvalue="99">
+                <span class="divider">:</span>
+                <input type="number" value="00" tabindex="2" class="timer_input" autocomplete="off" data-maxvalue="59">
+                <span class="divider">:</span>
+                <input type="number" value="00" tabindex="3" class="timer_input" autocomplete="off" data-maxvalue="59">
+              </div>
+              <div class="buttons_container">
+                <button id="save" class="functional_btn">
+                  <img src="./chronometrum/sources/icons/save_icon.svg">
+                </button>
+                <button id="stop_new_template" class="functional_btn">
+                  <img src="./chronometrum/sources/icons/stop_icon.svg">
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="timer_after" id="timer_after">
+    <div class="timer_output" id="timer_output">
+      <div class="out_container">
+        <span id="hours_value">00</span>
+        <span class="output_format">hours</span>
+      </div>
+      <span class="divider">:</span>
+      <div class="out_container">
+        <span id="minutes_value">00</span>
+        <span class="output_format">minutes</span>
+      </div>
+      <span class="divider">:</span>
+      <div class="out_container">
+        <span id="seconds_value">00</span>
+        <span class="output_format">seconds</span>
+      </div>
+    </div>
+    <div class="buttons_container">
+      <button id="pause" class="functional_btn">
+        <img src="./chronometrum/sources/icons/pause_icon.svg">
+      </button>
+      <button id="stop" class="functional_btn">
+        <img src="./chronometrum/sources/icons/stop_icon.svg">
+      </button>
+    </div>
+  </div>
+
+  <script src="./chronometrum/chronometrum.js"></script>
+</body>
+
+</html>
