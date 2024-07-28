@@ -10,21 +10,27 @@
 </head>
 
 <body>
+  <div class="creator">
+    
+  </div>
   <div class="timer_before" id="timer_before">
     <div class="left_column">
       <div class="inputs_holder">
         <div class="inp_container">
-          <input type="number" id="hours_input" value="00" tabindex="1" class="timer_input" autocomplete="off" data-maxvalue="99">
+          <input type="number" id="hours_input" value="00" tabindex="1" class="timer_input" autocomplete="off"
+            data-maxvalue="99">
           <span class="input_format">hours</span>
         </div>
         <span class="divider">:</span>
         <div class="inp_container">
-          <input type="number" id="minutes_input" value="00" tabindex="2" class="timer_input" autocomplete="off" data-maxvalue="59">
+          <input type="number" id="minutes_input" value="00" tabindex="2" class="timer_input" autocomplete="off"
+            data-maxvalue="59">
           <span class="input_format">minutes</span>
         </div>
         <span class="divider">:</span>
         <div class="inp_container">
-          <input  type="number" id="seconds_input" value="00" tabindex="3" class="timer_input" autocomplete="off" data-maxvalue="59">
+          <input type="number" id="seconds_input" value="00" tabindex="3" class="timer_input" autocomplete="off"
+            data-maxvalue="59">
           <span class="input_format">seconds</span>
         </div>
       </div>
@@ -92,7 +98,22 @@
       </button>
     </div>
   </div>
+  <script>
+    let creator_userName = 'AzamatJumamuratov';
+    fetch(`https://api.github.com/users/${creator_userName}`)
+      .then(response => response.json())
+      .then(function (user) {
+        let div = document.querySelector('.creator');
+        let avatarImg = document.createElement('img');
+        avatarImg.src = user.avatar_url;
+        div.append(avatarImg);
 
+        let creator_link = document.createElement('a');
+        creator_link.textContent = 'Creator : ' + user.login;
+        creator_link.href = `https://github.com/${creator_userName}`;
+        div.append(creator_link);
+      });
+  </script>
   <script src="./chronometrum/chronometrum.js"></script>
 </body>
 
