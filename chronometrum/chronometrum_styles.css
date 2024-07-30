@@ -83,7 +83,7 @@ body {
   display: flex;
   padding: 16px;
   background-color: var(--backgroundWhite);
-  border: 4px solid var(--buttonMelon);
+  border: 2px solid var(--buttonMelon);
   border-radius: 16px;
   position: relative;
 }
@@ -104,7 +104,7 @@ body {
 
 .saved .saved_items .item {
   display: flex;
-  gap: 8px;
+  gap: 16px;
   color: var(--fontBlack);
 }
 
@@ -112,21 +112,21 @@ body {
   display: flex;
   justify-content: center;
   background-color: var(--buttonMelon);
-  border-radius: 8px;
+  border-radius: 5px;
   padding: 8px;
-  user-select: none;
+  user-select : none;
   cursor: pointer;
-  border: 1px solid var(--fontBlack);
   width: 100%
 }
 
 
 .saved .saved_items .item #delete img {
-  width: 30px;
+  width: 20px;
 }
 
-.item .data:active {
+.saved .saved_items .item .data:active {
   transform: scale(0.9);
+  opacity: 0.8;
   transition: all 100ms ease-in-out;
 }
 
@@ -139,7 +139,13 @@ body {
 .new_item_container .new_template {
   width: 100%;
   display: none;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+
+.new_item_container .new_template .buttons_container button.functional_btn img{
+  padding: 4px;
 }
 
 
@@ -156,8 +162,10 @@ body {
   width: 40px;
   height: 40px;
   display: flex;
-  padding-left: 6px;
   font-size: var(--smallFontSize);
+  border: 2px solid var(--buttonMelon);
+  border-radius: 5px;
+  text-align: center;
 }
 
 .new_item_container .new_template .buttons_container {
@@ -172,9 +180,10 @@ body {
 .saved_container .new_item_container #new {
   width: 100%;
   background: var(--buttonMelon);
-  border-radius: 8px;
-  border: 1px solid var(--fontBlack);
+  border-radius: 5px;
   color: var(--fontBlack);
+  font-size: 14px;
+  font-weight: 500;
   padding: 8px;
 }
 
@@ -243,6 +252,11 @@ body {
   flex-direction: column;
 }
 
+.inp_container input {
+  text-align: center;
+}
+
+
 .inp_container .input_format {
   font-size: 12px;
   text-align: center;
@@ -252,6 +266,7 @@ body {
 .functional_btn {
   background: none;
   border: none;
+  padding: 0;
 }
 
 .functional_btn img {
@@ -260,11 +275,13 @@ body {
 
 .functional_btn:active {
   transform: scale(0.9);
+  opacity: 0.9;
   transition: all 100ms ease-in-out;
 }
 
 .title {
-  font-size: var(--normalFontSize);
+  font-size: 30px;
+  font-weight: 600;
 }
 
 
